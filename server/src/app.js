@@ -2,6 +2,7 @@ import adminRoutes from "./routes/adminRoutes.js";
 import publicRoutes from "./routes/publicRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import express from "express";
+import uploadRoutes from "./routes/uploadRoutes.js";
 import cors from "cors";
 import { errorHandler } from "./middleware/errorHandler.js";
 
@@ -25,6 +26,7 @@ app.get("/api/health", (req, res) => {
 app.use("/api", publicRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/uploads", uploadRoutes);
 
 
 app.use(errorHandler);
