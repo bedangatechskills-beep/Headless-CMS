@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Project from "../models/projects.js";
+import Project from "../models/project.js";
 import Service from "../models/service.js";
 import TeamMember from "../models/teamMember.js";
 import Testimonial from "../models/testimonial.js";
