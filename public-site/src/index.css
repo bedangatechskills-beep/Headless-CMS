@@ -1,0 +1,72 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #22223b;
+  background: #fdfcf9;
+  line-height: 1.6;
+}
+h1, h2, h3, .brand, .nav a, .btn { font-family: system-ui, -apple-system, sans-serif; }
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Nav */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 960px; margin: 0 auto; padding: 1.25rem;
+}
+.brand { font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.nav nav { display: flex; gap: 1.25rem; }
+.nav nav a { text-decoration: none; color: #555; }
+.nav nav a.active { color: #22223b; font-weight: 700; }
+
+/* Hero */
+.hero { padding: 4rem 0 3rem; }
+.hero h1 { font-size: 2.6rem; line-height: 1.15; max-width: 640px; }
+.hero p { margin-top: 1rem; max-width: 520px; color: #555; }
+
+/* Sections */
+section { padding: 2.5rem 0; }
+section > h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+
+/* Project cards */
+.card { background: #fff; border: 1px solid #eee; border-radius: 10px; overflow: hidden; text-decoration: none; }
+.card img { height: 160px; width: 100%; object-fit: cover; background: #eee; }
+.card .card-body { padding: 1rem; }
+.card h3 { font-size: 1.05rem; }
+.card p { font-size: 0.9rem; color: #666; margin-top: 0.35rem; }
+.card .tags { margin-top: 0.6rem; }
+
+.tag {
+  display: inline-block; font-size: 0.75rem; font-family: system-ui, sans-serif;
+  background: #eef0f7; color: #444; border-radius: 99px; padding: 0.15rem 0.6rem;
+  margin-right: 0.35rem;
+}
+button.tag { border: none; }
+button.tag.active { background: #22223b; color: #fff; }
+
+/* Services / team / testimonials */
+.service .icon { font-size: 1.8rem; }
+.person img { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; margin-bottom: 0.6rem; background: #eee; }
+blockquote { font-style: italic; border-left: 3px solid #ddd; padding-left: 1rem; }
+blockquote footer { margin-top: 0.5rem; font-style: normal; font-size: 0.85rem; color: #666; }
+
+/* Detail page */
+.detail h1 { font-size: 2.2rem; margin: 1.5rem 0 0.5rem; }
+.detail .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.detail .gallery img { border-radius: 10px; }
+.detail .body { white-space: pre-wrap; max-width: 680px; margin: 1rem 0 3rem; }
+
+/* Status + footer */
+.status { padding: 3rem 1.25rem; text-align: center; color: #666; }
+.status.error { color: #a12222; }
+.footer {
+  border-top: 1px solid #eee; margin-top: 3rem; padding: 2rem 1.25rem;
+  text-align: center; color: #666; font-size: 0.9rem;
+}
+.footer .socials a { margin: 0 0.5rem; }
