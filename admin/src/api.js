@@ -26,7 +26,11 @@ export async function api(path, options = {}) {
 
   const res = await fetch(`${API_URL}${path}`, { ...options, headers });
 
-  if (res.status === 401) {
+  // A 401 on a request we sent a token with means that token is dead:
+  // clear it and bounce to the login screen. A 401 with no token is just
+  // a failed login attempt — fall through so Login.jsx can show the
+  // server's message instead of being wiped out by a page reload.
+  if (res.status === 401 && token) {
     clearToken();
     window.location.href = "/login";
     throw new Error("Session expired — please log in again.");
