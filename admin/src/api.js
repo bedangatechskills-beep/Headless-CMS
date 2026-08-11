@@ -1,10 +1,10 @@
 // The single place the admin app talks to the server through.
-// Trailing slashes are stripped: a base URL ending in "/" would produce
-// "https://api.example.com//api/auth/login", which matches no Express route
-// and comes back as a confusing 404.
-const API_URL = (
-  import.meta.env.VITE_API_URL || "http://localhost:4000"
-).replace(/\/+$/, "");
+// Dashboard-pasted URLs pick up junk: a stray space makes the host
+// "...onrender.com%20" (unreachable), and a trailing "/" makes the path
+// "//api/auth/login" (matches no Express route). Trim both before use.
+const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:4000")
+  .trim()
+  .replace(/[\s/]+$/, "");
 
 export function getToken() {
   return localStorage.getItem("token");
